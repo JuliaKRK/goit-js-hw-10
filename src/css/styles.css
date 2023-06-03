@@ -1,0 +1,68 @@
+/* .loader-container {
+  position: relative;
+}
+
+.loader {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #888;
+}
+.error {
+  display: none;
+  color: red;
+}
+img {
+  max-width: 600px;
+  height: auto;
+  margin-left: 10px;
+}
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form {
+  margin-bottom: 20px;
+}
+
+.breed-select {
+  width: 300px;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.loader {
+  display: none;
+  margin-top: 20px;
+}
+
+.cat-info {
+  display: none;
+  margin-top: 20px;
+}
+
+.cat-image {
+  width: 400px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.cat-name {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.cat-description,
+.cat-temperament {
+  margin-bottom: 10px;
+}
+
+.error {
+  display: none;
+  color: red;
+  margin-top: 20px;
+} */
