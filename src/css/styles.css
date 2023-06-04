@@ -9,6 +9,12 @@ img {
   height: auto;
 }
 
+.container {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 20px;
+  gap: 20px;
+}
 .error {
   display: none;
   color: red;
@@ -17,8 +23,7 @@ img {
 .cat-image {
   width: 500px;
 }
-.cat-details {
-  padding-top: 20px;
+.cat-general-description {
   font-size: 30px;
 }
 
@@ -32,7 +37,7 @@ img {
 
 .breed-select {
   width: 500px;
-  border: 2px solid hsl(133, 69%, 28%);
+  border: 2px solid hsl(234, 87%, 41%);
   border-radius: 5px;
   margin-bottom: 20px;
   font-size: 24px;
@@ -46,5 +51,4 @@ img {
 
 .cat-temperament {
   font-size: 18px;
-  padding-top: 20px;
 }

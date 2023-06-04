@@ -1,17 +1,18 @@
 import SlimSelect from 'slim-select';
+import 'slim-select/dist/slimselect.css';
 import Notiflix from 'notiflix';
 import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
 
-const breedSelect = document.querySelector('#placeholderSingle');
-const loader = document.querySelector('.loader');
-const catInfo = document.querySelector('.cat-info');
+const breedSelectEl = document.querySelector('#placeholderSingle');
+const loaderEl = document.querySelector('.loader');
+const catInfoEl = document.querySelector('.cat-info');
 
 function showLoader() {
-  loader.style.display = 'block';
+  loaderEl.style.display = 'block';
 }
 
 function hideLoader() {
-  loader.style.display = 'none';
+  loaderEl.style.display = 'none';
 }
 
 function showError() {
@@ -22,11 +23,11 @@ function showError() {
 }
 
 function hideCatInfo() {
-  catInfo.style.display = 'none';
+  catInfoEl.style.display = 'none';
 }
 
 function clearCatInfo() {
-  catInfo.innerHTML = '';
+  catInfoEl.innerHTML = '';
 }
 
 function populateBreedSelect(breeds) {
@@ -40,12 +41,12 @@ function populateBreedSelect(breeds) {
     data: options,
   });
 
-  breedSelect.addEventListener('change', handleBreedSelectChange);
+  breedSelectEl.addEventListener('change', handleBreedSelectChange);
 }
 
 function updateCatInfo(cat) {
   const catElement = document.createElement('div');
-  catElement.classList.add('cat-container');
+  catElement.classList.add('container');
 
   const image = document.createElement('img');
   image.setAttribute('src', cat.url);
@@ -54,7 +55,7 @@ function updateCatInfo(cat) {
   catElement.appendChild(image);
 
   const catDetails = document.createElement('div');
-  catDetails.classList.add('cat-details');
+  catDetails.classList.add('cat-general-description');
 
   const breedName = document.createElement('h2');
   breedName.textContent = cat.breeds[0].name;
@@ -67,18 +68,18 @@ function updateCatInfo(cat) {
   catDetails.appendChild(description);
 
   const temperament = document.createElement('p');
-  temperament.textContent = `Temperament: ${cat.breeds[0].temperament}`;
+  temperament.textContent = `Temperament:  ${cat.breeds[0].temperament}`;
   temperament.classList.add('cat-temperament');
   catDetails.appendChild(temperament);
 
   catElement.appendChild(catDetails);
 
-  catInfo.innerHTML = '';
-  catInfo.appendChild(catElement);
+  catInfoEl.innerHTML = '';
+  catInfoEl.appendChild(catElement);
 }
 
 function handleBreedSelectChange() {
-  const selectedBreedId = breedSelect.value;
+  const selectedBreedId = breedSelectEl.value;
 
   hideCatInfo();
   clearCatInfo();
@@ -88,7 +89,7 @@ function handleBreedSelectChange() {
     .then(cat => {
       updateCatInfo(cat);
       hideLoader();
-      catInfo.style.display = 'block';
+      catInfoEl.style.display = 'block';
     })
     .catch(error => {
       console.error(error);
