@@ -36,8 +36,8 @@ img {
 }
 
 .breed-select {
-  width: 500px;
-  border: 2px solid hsl(234, 87%, 41%);
+  width: 494px;
+  border: 3px solid hsl(234, 87%, 41%);
   border-radius: 5px;
   margin-bottom: 20px;
   font-size: 24px;
@@ -49,6 +49,11 @@ img {
   margin-bottom: 5px;
 }
 
-.cat-temperament {
-  font-size: 18px;
+.cat-temperament-value {
+  font-size: 20px;
+}
+
+.cat-temperament-label {
+  font-size: 22px;
+  font-weight: bolder;
 }

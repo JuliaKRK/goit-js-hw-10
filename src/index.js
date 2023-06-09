@@ -67,9 +67,24 @@ function updateCatInfo(cat) {
   description.classList.add('cat-description');
   catDetails.appendChild(description);
 
+  // const spanTemperament = document.createElement(`span`);
+  // spanTemperament.textContent = `Temperament:`;
+  // spanTemperament.classList.add(`span-temperament`);
+  // catDetails.appendChild(spanTemperament);
+
   const temperament = document.createElement('p');
-  temperament.textContent = `Temperament:  ${cat.breeds[0].temperament}`;
   temperament.classList.add('cat-temperament');
+
+  const spanLabel = document.createElement('span');
+  spanLabel.textContent = 'Temperament: ';
+  spanLabel.classList.add('cat-temperament-label');
+  temperament.appendChild(spanLabel);
+
+  const spanValue = document.createElement('span');
+  spanValue.textContent = cat.breeds[0].temperament;
+  spanValue.classList.add('cat-temperament-value');
+  temperament.appendChild(spanValue);
+
   catDetails.appendChild(temperament);
 
   catElement.appendChild(catDetails);
